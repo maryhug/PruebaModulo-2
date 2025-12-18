@@ -1,0 +1,16 @@
+El error ocurre porque GitHub eliminó el soporte para contraseñas estándar en operaciones de terminal desde 2021. Para autenticarte en 2025, debes usar un Token de Acceso Personal (PAT) en lugar de tu contraseña de usuario.
+1. Generar un Token de Acceso Personal (PAT)
+Inicia sesión en GitHub y ve a Settings (Configuración) desde tu foto de perfil.
+                                                        En la barra lateral izquierda, desplázate hasta el final y haz clic en Developer settings.
+Haz clic en Personal access tokens y luego selecciona Tokens (classic).
+Haz clic en Generate new token > Generate new token (classic).
+Dale un nombre (ej. "Token de Clase") y selecciona la casilla repo (necesaria para git push).
+                                                                                                                                                                                                                               Haz clic en Generate token al final de la página.
+                                                                                                                                                                                                                               Copia el token inmediatamente. Una vez que cierres la página, no podrás volver a verlo.
+2. Usar el Token en tu terminal
+ Cuando ejecutes el comando git push y la terminal te pida tus credenciales, haz lo siguiente:
+Username: Ingresa tu usuario (maryhug).
+                                      Password: Pega el token que acabas de copiar (no verás los caracteres al pegarlo).
+3. Actualizar credenciales guardadas (Si el error persiste)
+Si tu computadora tiene guardada la contraseña antigua y no te permite ingresar la nueva, debes borrarla del sistema:
+En Windows: Busca "Administrador de Credenciales" > Credenciales de Windows. Busca cualquier entrada de github.com y elimínala o edítala reemplazando la contraseña por el token.

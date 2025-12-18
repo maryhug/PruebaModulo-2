@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-font: 'Inter', sans-serif;
+    --primary-color: #4CAF4F; /* Color principal rojo */
+    --text-dark: #263238; /* Color de texto oscuro */
+    --text-gray: #212121; /* Color de texto gris */
+    --border-color: #DDDDDD; /* Color de bordes */
+    --background-light: #FFFFFF; /* Fondo blanco */
+    --background-gray: #F8F8F8; /* Fondo gris claro */
+    --bg-header: #F5F7FA;
+
+}
+
+/* ========== HEADER ========== */
+.header {
+    font-family: var(--primary-font), serif;
+    padding: 20px 100px; /* Relleno superior e inferior */
+    background: var(--bg-header) ;
+}
+
+/* Navegación - Layout horizontal */
+.nav {
+    display: flex; /* Contenedor flexible */
+    justify-content: space-between; /* Distribuye espacio entre elementos */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+/* Logo */
+.logo {
+    display: flex; /* Layout flexible */
+    align-items: center; /* Centra verticalmente */
+    gap: 10px; /* Espacio entre elementos */
+    font-size: 30px; /* Tamaño de texto */
+    color: var(--text-dark); /* Color oscuro */
+}
+
+.logo img {
+    width: 35px; /* Ancho de imagen */
+    height: 24px; /* Alto de imagen */
+}
+
+/* Menú de navegación */
+.nav-menu {
+    display: flex; /* Layout horizontal */
+    list-style: none; /* Sin viñetas */
+    gap: 40px; /* Espacio entre enlaces */
+}
+
+.nav-menu a {
+    text-decoration: none; /* Sin subrayado */
+    color: var(--text-gray); /* Color gris */
+    font-weight: initial; /* Grosor normal */
+    transition: color 0.3s; /* Animación de color en 0.3 segundos */
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color); /* Cambia a rojo al pasar mouse */
+}
+
+/* Botones de navegación */
+.nav-buttons {
+    display: flex; /* Layout horizontal */
+    gap: 20px; /* Espacio entre botones */
+    padding-right: 90px;
+}
+
+/* Botón Sign In */
+.btn-login {
+    background: transparent; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: var(--primary-color); /* Color oscuro */
+    font-weight: 500; /* Grosor medio */
+    padding: 10px 30px; /* Relleno interno */
+    cursor: pointer; /* Cursor de manita */
+}
+
+/* Botón Sign Up */
+.btn-signup {
+    background: transparent; /* Sin fondo */
+    border: 2px solid var(--primary-color); /* Borde rojo de 2px */
+    color: var(--primary-color); /* Texto rojo */
+    font-weight: 500; /* Grosor medio */
+    padding: 12px 10px; /* Relleno interno */
+    border-radius: 15px; /* Bordes muy redondeados */
+    cursor: pointer; /* Cursor de manita */
+    transition: all 0.3s; /* Anima todos los cambios en 0.3s */
+}
+
+.btn-signup:hover {
+    background: var(--primary-color); /* Fondo rojo al hover */
+    color: white; /* Texto blanco al hover */
+}
+
+.testimonials-navigation {
+    display: flex; /* Activa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Distribuye con espacio entre elementos */
+    margin-top: 80px; /* Margen superior */
+}
+
+/* Contenedor de puntos indicadores */
+.testimonial-dots {
+    display: flex; /* Activa flexbox */
+    gap: 8px; /* Espacio entre puntos */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Punto indicador individual */
+.dot {
+    width: 10px; /* Ancho */
+    height: 10px; /* Alto */
+    background-color: var(--primary-color); /* Fondo blanco */
+    opacity: 30%;
+    border-radius: 50%; /* Forma circular */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s ease; /* Transición suave del fondo */
+}
+
+/* Punto activo */
+.dot.active {
+    background-color: var(--primary-color); /* Fondo verde */
+    opacity: 100%;
+}
+
+/* Punto al pasar el mouse */
+.dot:hover {
+    background-color: #B9FF66; /* Fondo verde */
+    opacity: 0.7; /* Transparencia del 70% */
+}
+
+.hero{
+    background: var(--bg-header) ;
+}
