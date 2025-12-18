@@ -1,35 +1,32 @@
-# Prueba de Desempeño Html Css
+## HTML/CSS Performance Test
 ## Nexcent - Landing Page
 
-## Deploy Link
+## 🚀 Deploy Link
 https://maryhug.github.io/PruebaModulo-2/
 
-## 🛠️ Instrucciones para clonar y visualizar el proyecto.
-1. Clona el repositorio
-    - git clone https://github.com/maryhug/PruebaModulo-2.git
-2. Abre docs/index.html en tu navegador
-3. No requiere instalación de dependencias
+## 🛠️ Instructions for cloning and viewing the project.
+1. Clone the repository
+   - `git clone https://github.com/maryhug/PruebaModulo-2.git`
+2. Open `docs/index.html` in your browser
+3. No dependency installation required
 
-## 📁 Estructura del Proyecto
-
+## 📁 Project Structure
 ```
 PruebaHTML-CSS/
 ├──docs/
 │    ├── assets/
-│    │      ├── balon.svg
 │    │      ├── client1.svg
-│    │      ├── client1.svg
+│    │      ├── client2.svg
+│    │      ├── client3.svg
 │    │      └── ...
-│    ├── index.html
-│    └── styles.css
-├── src/
 │    ├── assets/
-│        ├── EnunciadoPruebaDesempeño.pdf
-│        └── referencia-prueba.png
+│    │      ├── responsive.css
+│    │      └── styles.css
+│    └── index.html
 ├── .gitignore 
 └── README.md
 ```
-## 🎨 Paleta de Colores
+## 🎨 Color Palette
 ```
     --primary-color: #4CAF4F;
 
@@ -52,10 +49,10 @@ PruebaHTML-CSS/
 ```
 
 ## 📱 Responsive Design
-
-- Escritorio (≥ 1024px)
+- Desktop (≥ 1024px)
 - Tablet (≥ 768px)
-- Móvil (≤ 480px)
+- Mobile (≤ 480px)
 
 ## 👤 Autor
-**MaryHug** - [@maryhug](https://github.com/maryhug)
+**Maryhug**
+([@maryhug](https://github.com/maryhug))

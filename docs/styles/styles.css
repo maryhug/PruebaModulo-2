@@ -1,30 +1,21 @@
-/* Start Global Rules */
-
+/* Estilo base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
+    margin: 0; /* Elimina márgenes externos */
+    padding: 0; /* Elimina relleno interno */
+    box-sizing: border-box; /* Incluye padding y border en el ancho/alto total */
+    font-family: "Inter", sans-serif; /* Font aplicada a todo el html */
 }
 
 body {
-    padding-top: 80px;
-}
-
-section {
-    scroll-margin-top: 100px;
+    padding-top: 80px; /* Relleno superior de 80px */
 }
 
 ul {
-    list-style: none;
+    list-style: none; /* Elimina viñetas */
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none; /* Ninguna decoracion (subrayado, tachado u otras líneas)*/
 }
 
 :root {
@@ -52,11 +43,7 @@ a {
     --main-padding: 80px 0;
 }
 
-/* Typography */
-
-
-/* Headlines */
-
+/* Estilo del titulo de Hero */
 .headline-1 {
     font-size: 64px;
     font-weight: 600;
@@ -65,6 +52,8 @@ a {
     color: var(--black-color);
 }
 
+
+/* Estilo del titulo de Our Clients */
 .headline-2 {
     font-size: 36px;
     font-weight: 600;
@@ -73,6 +62,7 @@ a {
     color: var(--black-color);
 }
 
+/* Estilo del titulo de Card Manage your entire */
 .headline-3 {
     font-size: 28px;
     font-weight: 600;
@@ -81,6 +71,7 @@ a {
     color: var(--black-color);
 }
 
+/* Estilo del titulo de Tim Smith*/
 .headline-4 {
     font-size: 20px;
     font-weight: 600;
@@ -89,8 +80,7 @@ a {
     color: var(--black-color);
 }
 
-/* Body */
-
+/* Estilo Body Hero */
 .body-regular-1 {
     font-size: 18px;
     font-weight: 400;
@@ -107,6 +97,7 @@ a {
     color: var(--grey-color);
 }
 
+/* Estilo body Footer */
 .body-regular-3 {
     font-size: 14px;
     font-weight: 400;
@@ -115,75 +106,8 @@ a {
     color: var(--grey-color);
 }
 
-.body-regular-4 {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.1px;
-    color: var(--grey-color);
-}
+/* Header - NavBar */
 
-.body-medium-1 {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0.1px;
-    color: var(--grey-color);
-}
-
-.body-medium-2 {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0.1px;
-    color: var(--grey-color);
-}
-
-.body-medium-3 {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0.1px;
-    color: var(--grey-color);
-}
-
-.body-medium-4 {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0.1px;
-    color: var(--grey-color);
-}
-
-/* Captions */
-
-.caption-1 {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0;
-    color: var(--grey-color);
-}
-
-.caption-2 {
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 14px;
-    letter-spacing: 0;
-    color: var(--grey-color);
-}
-
-.caption-3 {
-    font-size: 8px;
-    font-weight: 400;
-    line-height: 12px;
-    letter-spacing: 0;
-    color: var(--grey-color);
-}
-
-/* End Global Rules */
-
-/* Start Navbar */
 
 .header {
     padding: 20px 0;
@@ -291,6 +215,8 @@ a {
     color: var(--shade-1);
 }
 
+
+/* Tres lineas con poco responsive */
 .menu-toggle {
     display: none;
     background: none;
@@ -314,11 +240,7 @@ a {
     display: none;
 }
 
-
-/* End Navbar */
-
-/* Start Hero */
-
+/* Hero */
 .hero {
     padding: 20px 96px;
     display: flex;
@@ -364,10 +286,11 @@ a {
     animation: float 3s ease-in-out infinite;
 }
 
+/* Puntos bajos del hero */
 .dots-container {
     position: absolute;
     left: 50%;
-    bottom: 230px;
+    bottom: 250px;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
@@ -388,6 +311,7 @@ a {
     opacity: 1;
 }
 
+/* transiciones fluidas y animaciones*/
 @keyframes float {
     0% {
         transform: translateY(0);
@@ -403,13 +327,10 @@ a {
 }
 
 
-/* End Hero */
-
-/* Start Our Clients */
-
+/* Our Clients */
 .our-clients {
     padding: var(--main-padding);
-    overflow: hidden;
+    overflow: hidden; /* oculta el contenido que se desborda  */
 }
 
 .our-clients-content {
@@ -423,7 +344,7 @@ a {
 }
 
 .our-clients-slider {
-    overflow: hidden;
+    overflow: hidden; /* oculta el contenido que se desborda  */
 }
 
 .slider-track {
@@ -433,8 +354,8 @@ a {
 }
 
 .our-clients-slider-item {
-    flex: 0 0 150px;
-    display: flex;
+    flex: 0 0 150px; /* no crece, no se encoge, tamaño base inicial*/
+    display: flex; /* lo convierte a contendio flexible */
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -464,8 +385,7 @@ a {
     }
 }
 
-/* Start Features */
-
+/*  Features */
 .features {
     padding: var(--main-padding);
 }
@@ -488,8 +408,8 @@ a {
 
 .features-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr); /* 3 Columnas del mismo tamaño */
+    justify-content: space-between; /* distribuye los elementos flexibles a lo largo del eje principal */
     gap: 24px;
 }
 
@@ -558,7 +478,7 @@ a {
 }
 
 
-/* Start Content Section 1 */
+/* Section 1 */
 
 .content-section-1 {
     padding: var(--main-padding);
@@ -598,7 +518,7 @@ a {
     padding: 14px 32px;
 }
 
-/* Start Stats Section */
+/* Stats Section */
 
 .stats-section {
     padding: var(--main-padding);
@@ -653,7 +573,7 @@ a {
 }
 
 
-/* Start Testimonial Section */
+/* Testimonial Section */
 
 .testimonial-section {
     padding: var(--main-padding);
@@ -783,7 +703,7 @@ a {
     transform: translateX(4px);
 }
 
-/* Start FAQ Section */
+/* FAQ Section */
 
 .faq-section {
     padding: var(--main-padding);
@@ -888,7 +808,7 @@ a {
     transform: translateX(4px);
 }
 
-/* Start CTA Section */
+/* CTA Section */
 
 .cta-section {
     padding: var(--main-padding);
@@ -928,7 +848,7 @@ a {
     transform: translateX(4px);
 }
 
-/* Start Footer Section */
+/* Footer Section */
 
 .footer {
     padding: var(--main-padding);
