@@ -1,9 +1,4 @@
-# LaslesVPN - Landing Page
-
-Landing page moderna y responsive para un servicio VPN, construida con HTML y CSS puro.
-
-<img width="547" height="863" alt="image" src="https://github.com/user-attachments/assets/d6fc9427-4fdd-40cb-9397-f1dc67e48f85" />
-
+# Prueba de Desempeño Html Css
 
 ## Deploy Link
 https://maryhug.github.io/LaslesVPN/
