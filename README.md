@@ -4,11 +4,6 @@
 ## Deploy Link
 https://maryhug.github.io/PruebaModulo-2/
 
-## 🚀 Características
-Prueba Modulo 
-
-## 📋 Requisitos
-
 ## 🛠️ Instrucciones para clonar y visualizar el proyecto.
 1. Clona el repositorio
     - git clone https://github.com/maryhug/PruebaModulo-2.git
@@ -21,25 +16,46 @@ Prueba Modulo
 PruebaHTML-CSS/
 ├──docs/
 │    ├── assets/
-     │      ├── balon.svg
-     │      ├── client1.svg
-     │      ├── client1.svg
-     │      └── ...
-│    └── .gitignore
-└── src/
-    ├── index.html       # Página principal
-    ├── styles.css       # Estilos CSS
-    └── assets/          # Imágenes e iconos
-    ├── icono.svg
-    ├── hero-illustration.svg
-    ├── features-illustration.svg
-    └── ...
+│    │      ├── balon.svg
+│    │      ├── client1.svg
+│    │      ├── client1.svg
+│    │      └── ...
+│    ├── index.html
+│    └── styles.css
+├── src/
+│    ├── assets/
+│        ├── EnunciadoPruebaDesempeño.pdf
+│        └── referencia-prueba.png
+├── .gitignore 
+└── README.md
 ```
 ## 🎨 Paleta de Colores
+```
+    --primary-color: #4CAF4F;
 
-## 🔤 Tipografía
+    --black-color: #263238;
+    --d-grey-color: #4D4D4D;
+    --grey-color: #717171;
+    --l-grey-color: #89939E;
+    --grey-blue-color: #ABBED1;
+    --silver-color: #F5F7FA;
+    --white-color: #FFFFFF;
+
+    --shade-1: #43A046;
+    --shade-2: #388E3B;
+    --shade-3: #237D31;
+    --shade-4: #1B5E1F;
+    --shade-5: #103E13;
+
+    --tint-4: #C8E6C9;
+    --tint-5: #E8F5E9;
+```
 
 ## 📱 Responsive Design
+
+- Escritorio (≥ 1024px)
+- Tablet (≥ 768px)
+- Móvil (≤ 480px)
 
 ## 👤 Autor
 **MaryHug** - [@maryhug](https://github.com/maryhug)
