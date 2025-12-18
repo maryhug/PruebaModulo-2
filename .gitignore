@@ -25,6 +25,7 @@ Desktop.ini
 
 # IDE/Editor files
 ../.idea/
+.idea
 .vscode/
 *.swp
 *.swo
