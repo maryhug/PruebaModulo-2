@@ -1,220 +1,284 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento: HTML5 (la versión más reciente de HTML) -->
+<html lang="en"> <!-- Elemento raíz del documento | lang="en": idioma principal en inglés (mejora accesibilidad y SEO) -->
 
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexcent</title>
+<head> <!-- Sección de metadatos: información que no se muestra directamente en la página -->
+    <meta charset="UTF-8"> <!-- Codificación de caracteres: UTF-8 (soporta todos los caracteres internacionales, emojis, etc.) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración responsive: viewport se adapta al ancho del dispositivo, escala inicial 1:1 (esencial para móviles) -->
+    <title>Nexcent</title> <!-- Título de la página: aparece en la pestaña del navegador y en resultados de búsqueda -->
 
     <!--Link para importar los estilos-->
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/styles.css"> <!-- Vincula la hoja de estilos principal | rel="stylesheet": define el tipo de relación | href: ruta al archivo CSS -->
+    <link rel="stylesheet" href="styles/responsive.css"> <!-- Vincula la hoja de estilos responsive (para diferentes tamaños de pantalla) -->
 
     <!--Link para importar iconos (flecha - redes sociales)-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Vincula Font Awesome 6.5.1 desde CDN (Content Delivery Network)
+         integrity: hash de seguridad para verificar que el archivo no fue modificado
+         crossorigin="anonymous": permite cargar recursos de otro dominio sin enviar credenciales
+         referrerpolicy="no-referrer": no envía información del referrer por privacidad -->
 
     <!--Link para importar tipografia Inter-->
     <link
             href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Marhey:wght@300..700&family=Rakkas&display=swap"
             rel="stylesheet">
+    <!-- Vincula Google Fonts: carga las fuentes El Messiri, Inter, Marhey y Rakkas
+         wght: rango de pesos de fuente (400-700 significa desde normal hasta bold)
+         ital: variantes itálicas (0=normal, 1=italic)
+         display=swap: muestra texto con fuente del sistema primero, luego intercambia cuando cargue la fuente personalizada (mejora rendimiento) -->
 </head>
 
-<body>
-<header class="header">
-    <div class="container">
-        <a href="#">
-            <img src="assets/logo/icon.svg" alt="logo">
+<body> <!-- Cuerpo del documento: contiene todo el contenido visible de la página -->
+
+<!-- ============================================
+     HEADER - Barra de navegación superior fija
+     ============================================ -->
+<header class="header"> <!-- Encabezado semántico de la página | class="header": aplica estilos CSS definidos para .header -->
+    <div class="container"> <!-- Contenedor que centra y limita el ancho del contenido (max-width: 1200px definido en CSS) -->
+
+        <!-- Logo -->
+        <a href="#"> <!-- Enlace al inicio (# significa ancla vacía, debería ser "/" o la URL home) -->
+            <img src="assets/logo/icon.svg" alt="logo"> <!-- Imagen del logo | src: ruta al archivo SVG | alt: texto alternativo para accesibilidad (lectores de pantalla) -->
         </a>
 
-        <input type="checkbox" id="menu-checkbox">
-        <label for="menu-checkbox" class="menu-toggle" aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars"></i>
+        <!-- Sistema de menú hamburguesa (toggle CSS-only sin JavaScript) -->
+        <input type="checkbox" id="menu-checkbox"> <!-- Checkbox oculto: controla el estado abierto/cerrado del menú móvil mediante :checked en CSS -->
+        <label for="menu-checkbox" class="menu-toggle" aria-label="Toggle navigation"> <!-- Label vinculado al checkbox | aria-label: descripción para lectores de pantalla -->
+            <i class="fa-solid fa-bars"></i> <!-- Ícono de menú hamburguesa (tres líneas) de Font Awesome -->
         </label>
 
-        <nav class="header-menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#service">Service</a></li>
-                <li><a href="#feature">Feature</a></li>
-                <li><a href="#product">Product </a></li>
-                <li><a href="#testimonial">Testimonial</a></li>
-                <li><a href="#faq">FAQ</a></li>
+        <!-- Menú de navegación principal -->
+        <nav class="header-menu"> <!-- Elemento semántico de navegación -->
+            <ul> <!-- Lista desordenada (unordered list) -->
+                <li><a href="#home">Home</a></li> <!-- Elemento de lista | Enlace de ancla: salta a la sección con id="home" -->
+                <li><a href="#service">Service</a></li> <!-- Ancla a la sección de servicios -->
+                <li><a href="#feature">Feature</a></li> <!-- Ancla a la sección de características -->
+                <li><a href="#product">Product </a></li> <!-- Ancla a la sección de productos (nota: espacio extra antes de </a>) -->
+                <li><a href="#testimonial">Testimonial</a></li> <!-- Ancla a la sección de testimonios -->
+                <li><a href="#faq">FAQ</a></li> <!-- Ancla a la sección de preguntas frecuentes -->
             </ul>
         </nav>
 
-        <div class="header-actions">
-            <a href="#" class="btn btn-secondary">Login</a>
-            <a href="#" class="btn btn-primary">Sign up</a>
+        <!-- Botones de acción del header -->
+        <div class="header-actions"> <!-- Contenedor de botones -->
+            <a href="#" class="btn btn-secondary">Login</a> <!-- Botón de login | Aplica dos clases: .btn (estilos base) y .btn-secondary (variante sin fondo) -->
+            <a href="#" class="btn btn-primary">Sign up</a> <!-- Botón de registro | .btn-primary: variante con fondo verde -->
         </div>
     </div>
 </header>
 
-<main>
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-content-text">
+<!-- ============================================
+     MAIN - Contenido principal de la página
+     ============================================ -->
+<main> <!-- Elemento semántico: indica el contenido principal de la página (mejora SEO y accesibilidad) -->
+
+    <!-- ============================================
+         HERO SECTION - Sección de bienvenida principal
+         ============================================ -->
+    <section id="home" class="hero"> <!-- Sección semántica con ID para navegación por ancla | class="hero": aplica estilos específicos -->
+        <div class="container"> <!-- Contenedor centrado y con ancho máximo -->
+
+            <!-- Contenido de texto del hero -->
+            <div class="hero-content"> <!-- Contenedor del texto e información del lado izquierdo -->
+                <div class="hero-content-text"> <!-- Contenedor interno para título y descripción -->
                     <h1 class="headline-1">Lessons and insights <span class="hero-span">from 8 years</span></h1>
-                    <p class="body-regular-1">Where to grow your business as a photographer: site or social media?
-                    </p>
+                    <!-- Título principal (h1): el más importante de la página (solo debe haber uno por página)
+                         <span class="hero-span">: elemento inline para aplicar estilo diferente (color verde) a parte del texto -->
+                    <p class="body-regular-1">Where to grow your business as a photographer: site or social media?</p>
+                    <!-- Párrafo con descripción | class="body-regular-1": aplica tamaño de fuente 18px -->
                 </div>
-                <a href="#" class="btn btn-primary">Register</a>
+                <a href="#" class="btn btn-primary">Register</a> <!-- Botón de llamada a la acción (CTA) -->
             </div>
-            <div class="hero-image">
-                <img src="assets/doodles/hero.svg" alt="hero-image">
+
+            <!-- Imagen ilustrativa del hero -->
+            <div class="hero-image"> <!-- Contenedor de la imagen del lado derecho -->
+                <img src="assets/doodles/hero.svg" alt="hero-image"> <!-- Ilustración SVG | alt: descripción para accesibilidad -->
             </div>
-            <div class="dots-container">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+
+            <!-- Indicadores de navegación (dots/puntos) -->
+            <div class="dots-container"> <!-- Contenedor de puntos indicadores (para carrusel/slider) -->
+                <div class="dot active"></div> <!-- Punto activo (slide actual) | class="active": aplica opacidad 100% en CSS -->
+                <div class="dot"></div> <!-- Punto inactivo (opacidad 30%) -->
+                <div class="dot"></div> <!-- Punto inactivo -->
             </div>
         </div>
     </section>
 
-    <section id="service" class="our-clients">
+    <!-- ============================================
+         OUR CLIENTS SECTION - Sección de clientes
+         ============================================ -->
+    <section id="service" class="our-clients"> <!-- Sección de clientes con ID "service" (debería ser más descriptivo como "clients") -->
         <div class="container">
-            <div class="our-clients-content">
-                <h2 class="headline-2">Our Clients</h2>
-                <p class="body-regular-2">We have been working with some Fortune 500+ clients</p>
+
+            <!-- Contenido de texto de la sección -->
+            <div class="our-clients-content"> <!-- Contenedor de título y descripción -->
+                <h2 class="headline-2">Our Clients</h2> <!-- Título de segundo nivel (h2): títulos de sección -->
+                <p class="body-regular-2">We have been working with some Fortune 500+ clients</p> <!-- Descripción -->
             </div>
 
-            <div class="our-clients-slider">
-                <div class="slider-track">
-                    <div class="our-clients-slider-item">
+            <!-- Slider de logos de clientes -->
+            <div class="our-clients-slider"> <!-- Contenedor del slider con overflow hidden -->
+                <div class="slider-track"> <!-- Track/carril que contiene todos los logos (se puede animar con CSS o JS) -->
+                    <!-- Elementos individuales del slider -->
+                    <div class="our-clients-slider-item"> <!-- Contenedor de cada logo con flexbox centrado -->
                         <img src="assets/client/client1.svg" alt="client-1" style="width:55px">
+                        <!-- Logo del cliente 1 | style inline: sobreescribe CSS (width 55px en lugar de 70px por defecto) -->
                     </div>
                     <div class="our-clients-slider-item">
-                        <img src="assets/client/client2.svg" alt="client-2">
+                        <img src="assets/client/client2.svg" alt="client-2"> <!-- Logo del cliente 2 -->
                     </div>
                     <div class="our-clients-slider-item">
-                        <img src="assets/client/client3.svg" alt="client-3">
+                        <img src="assets/client/client3.svg" alt="client-3"> <!-- Logo del cliente 3 -->
                     </div>
                     <div class="our-clients-slider-item">
-                        <img src="assets/client/client4.svg" alt="client-4">
+                        <img src="assets/client/client4.svg" alt="client-4"> <!-- Logo del cliente 4 -->
                     </div>
                     <div class="our-clients-slider-item">
-                        <img src="assets/client/client5.svg" alt="client-5">
+                        <img src="assets/client/client5.svg" alt="client-5"> <!-- Logo del cliente 5 -->
                     </div>
                     <div class="our-clients-slider-item">
-                        <img src="assets/client/client6.svg" alt="client-6">
+                        <img src="assets/client/client6.svg" alt="client-6"> <!-- Logo del cliente 6 -->
                     </div>
                     <div class="our-clients-slider-item">
-                        <img src="assets/client/client3.svg" alt="client-3">
+                        <img src="assets/client/client3.svg" alt="client-3"> <!-- Logo duplicado (probablemente para efecto de scroll infinito) -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="feature" class="features">
+    <!-- ============================================
+         FEATURES SECTION - Sección de características
+         ============================================ -->
+    <section id="feature" class="features"> <!-- Sección de características principales -->
         <div class="container">
+
+            <!-- Contenido de texto de la sección -->
             <div class="features-content">
-                <h2 class="headline-2">Manage your entire community in a single system</h2>
-                <p class="body-regular-2">Who is Nextcent suitable for?</p>
+                <h2 class="headline-2">Manage your entire community in a single system</h2> <!-- Título de la sección -->
+                <p class="body-regular-2">Who is Nextcent suitable for?</p> <!-- Subtítulo/pregunta -->
             </div>
-            <div class="features-cards">
-                <div class="features-card">
-                    <div class="features-card-image">
-                        <img src="assets/community/icon-membership.svg" alt="feature-1">
+
+            <!-- Grid de tarjetas de características -->
+            <div class="features-cards"> <!-- Contenedor grid: 3 columnas en desktop (definido en CSS) -->
+
+                <!-- Tarjeta 1: Membership Organisations -->
+                <div class="features-card"> <!-- Tarjeta individual con hover effect -->
+                    <div class="features-card-image"> <!-- Contenedor del ícono con pseudo-elemento ::before decorativo -->
+                        <img src="assets/community/icon-membership.svg" alt="feature-1"> <!-- Ícono de membresía -->
                     </div>
-                    <div class="features-card-content">
-                        <h3 class="headline-3">Membership Organisations</h3>
-                        <p class="body-regular-3">Our membership management software provides full automation of
-                            membership renewals and payments</p>
+                    <div class="features-card-content"> <!-- Contenedor de texto -->
+                        <h3 class="headline-3">Membership Organisations</h3> <!-- Título de tercer nivel (h3): sub-secciones -->
+                        <p class="body-regular-3">Our membership management software provides full automation of membership renewals and payments</p> <!-- Descripción -->
                     </div>
                 </div>
+
+                <!-- Tarjeta 2: National Associations -->
                 <div class="features-card">
                     <div class="features-card-image">
-                        <img src="assets/community/icon-associations.svg" alt="feature-1">
+                        <img src="assets/community/icon-associations.svg" alt="feature-1"> <!-- Ícono de asociaciones (nota: alt debería ser "feature-2") -->
                     </div>
                     <div class="features-card-content">
                         <h3 class="headline-3">National Associations</h3>
-                        <p class="body-regular-3">Our membership management software provides full automation of
-                            membership renewals and payments</p>
+                        <p class="body-regular-3">Our membership management software provides full automation of membership renewals and payments</p>
                     </div>
                 </div>
+
+                <!-- Tarjeta 3: Clubs And Groups -->
                 <div class="features-card">
                     <div class="features-card-image">
-                        <img src="assets/community/icon-clubs.svg" alt="feature-1">
+                        <img src="assets/community/icon-clubs.svg" alt="feature-1"> <!-- Ícono de clubes (nota: alt debería ser "feature-3") -->
                     </div>
                     <div class="features-card-content">
                         <h3 class="headline-3">Clubs And Groups</h3>
-                        <p class="body-regular-3">Our membership management software provides full automation of
-                            membership renewals and payments</p>
+                        <p class="body-regular-3">Our membership management software provides full automation of membership renewals and payments</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="product" class="content-section-1">
+    <!-- ============================================
+         CONTENT SECTION 1 - Sección imagen + texto (primera instancia)
+         ============================================ -->
+    <section id="product" class="content-section-1"> <!-- Sección de contenido con layout imagen/texto alternado -->
         <div class="container">
-            <div class="content-section-1-content">
-                <img src="assets/doodles/spending.svg" alt="content-section-1-image">
+            <div class="content-section-1-content"> <!-- Contenedor flexbox: alinea imagen y texto horizontalmente -->
+
+                <img src="assets/doodles/spending.svg" alt="content-section-1-image"> <!-- Ilustración decorativa del lado izquierdo -->
+
+                <!-- Contenedor de texto del lado derecho -->
                 <div class="content-section-1-content-text">
-                    <div class="content-section-1-content-text-content">
-                        <h2 class="headline-2">The unseen of spending three years at Pixelgrade</h2>
-                        <p class="body-regular-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit
-                            amet
-                            justo ipsum. Sed accumsan quam vitae est varius fringilla. Pellentesque placerat
-                            vestibulum
-                            lorem sed porta. Nullam mattis tristique iaculis. Nullam pulvinar sit amet risus pretium
-                            auctor. Etiam quis massa pulvinar, aliquam quam vitae, tempus sem. Donec elementum
-                            pulvinar
-                            odio.</p>
+                    <div class="content-section-1-content-text-content"> <!-- Contenedor interno de título y descripción -->
+                        <h2 class="headline-2">The unseen of spending three years at Pixelgrade</h2> <!-- Título de la sección -->
+                        <p class="body-regular-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum. Sed accumsan quam vitae est varius fringilla. Pellentesque placerat vestibulum lorem sed porta. Nullam mattis tristique iaculis. Nullam pulvinar sit amet risus pretium auctor. Etiam quis massa pulvinar, aliquam quam vitae, tempus sem. Donec elementum pulvinar odio.</p>
+                        <!-- Texto Lorem Ipsum: texto de relleno/placeholder común en diseño -->
                     </div>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="#" class="btn btn-primary">Learn More</a> <!-- Botón de llamada a la acción -->
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="stats-section">
+    <!-- ============================================
+         STATS SECTION - Sección de estadísticas
+         ============================================ -->
+    <section class="stats-section"> <!-- Sección de estadísticas con fondo gris claro -->
         <div class="container">
-            <div class="stats-section-content">
+            <div class="stats-section-content"> <!-- Layout flexbox: texto a la izquierda, estadísticas a la derecha -->
+
+                <!-- Contenido de texto -->
                 <div class="content-item">
-                    <h2 class="headline-2">Helping a local <span class="stats-span">business reinvent itself</span>
-                    </h2>
-                    <p class="body-regular-2">We reached here with our hard work and dedication</p>
+                    <h2 class="headline-2">Helping a local <span class="stats-span">business reinvent itself</span></h2>
+                    <!-- Título con parte resaltada en verde -->
+                    <p class="body-regular-2">We reached here with our hard work and dedication</p> <!-- Descripción -->
                 </div>
-                <div class="stats-items">
-                    <div class="stats-item">
+
+                <!-- Grid de elementos de estadísticas (2x2) -->
+                <div class="stats-items"> <!-- Grid de 2 columnas -->
+
+                    <!-- Estadística 1: Members -->
+                    <div class="stats-item"> <!-- Contenedor flexbox: ícono + texto horizontal -->
                         <div class="stats-item-image">
-                            <img src="assets/business/members.svg" alt="stats-1">
+                            <img src="assets/business/members.svg" alt="stats-1"> <!-- Ícono de miembros -->
                         </div>
                         <div class="stats-item-content">
-                            <h2 class="headline-2">2,245,341</h2>
-                            <p class="body-regular-2">Members</p>
+                            <h2 class="headline-2">2,245,341</h2> <!-- Número grande de miembros -->
+                            <p class="body-regular-2">Members</p> <!-- Etiqueta descriptiva -->
                         </div>
                     </div>
+
+                    <!-- Estadística 2: Clubs -->
                     <div class="stats-item">
                         <div class="stats-item-image">
                             <img src="assets/business/clubs.svg" alt="stats-1" style="height: 3rem;">
+                            <!-- Ícono de clubes | style inline: altura fija de 3rem (48px si font-size base es 16px) -->
                         </div>
                         <div class="stats-item-content">
-                            <h2 class="headline-2">46,328</h2>
+                            <h2 class="headline-2">46,328</h2> <!-- Número de clubes -->
                             <p class="body-regular-2">Clubs</p>
                         </div>
                     </div>
+
+                    <!-- Estadística 3: Event Bookings -->
                     <div class="stats-item">
                         <div class="stats-item-image">
-                            <img src="assets/business/event-bookings.svg" alt="stats-1">
+                            <img src="assets/business/event-bookings.svg" alt="stats-1"> <!-- Ícono de reservas de eventos -->
                         </div>
                         <div class="stats-item-content">
-                            <h2 class="headline-2">828,867</h2>
+                            <h2 class="headline-2">828,867</h2> <!-- Número de reservas -->
                             <p class="body-regular-2">Event Bookings</p>
                         </div>
                     </div>
+
+                    <!-- Estadística 4: Payments -->
                     <div class="stats-item">
                         <div class="stats-item-image">
-                            <img src="assets/business/payments.svg" alt="stats-1">
+                            <img src="assets/business/payments.svg" alt="stats-1"> <!-- Ícono de pagos -->
                         </div>
                         <div class="stats-item-content">
-                            <h2 class="headline-2">1,926,436</h2>
+                            <h2 class="headline-2">1,926,436</h2> <!-- Número de pagos -->
                             <p class="body-regular-2">Payments</p>
                         </div>
                     </div>
@@ -223,52 +287,54 @@
         </div>
     </section>
 
-    <section class="content-section-1">
+    <!-- ============================================
+         CONTENT SECTION 1 - Segunda instancia (reutiliza estilos)
+         ============================================ -->
+    <section class="content-section-1"> <!-- Segunda sección con el mismo diseño imagen/texto -->
         <div class="container">
             <div class="content-section-1-content">
-                <img src="assets/doodles/spending-women.svg" alt="content-section-1-image">
+                <img src="assets/doodles/spending-women.svg" alt="content-section-1-image"> <!-- Ilustración diferente -->
                 <div class="content-section-1-content-text">
                     <div class="content-section-1-content-text-content">
-                        <h2 class="headline-2">How to design your site footer like we did</h2>
-                        <p class="body-regular-2">Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor,
-                            augue nec tincidunt molestie, massa nunc varius arcu, at scelerisque elit erat a magna.
-                            Donec quis erat at libero ultrices mollis. In hac habitasse platea dictumst. Vivamus
-                            vehicula leo dui, at porta nisi facilisis finibus. In euismod augue vitae nisi
-                            ultricies, non aliquet urna tincidunt. Integer in nisi eget nulla commodo faucibus
-                            efficitur quis massa. Praesent felis est, finibus et nisi ac, hendrerit venenatis
-                            libero. Donec consectetur faucibus ipsum id gravida.</p>
+                        <h2 class="headline-2">How to design your site footer like we did</h2> <!-- Título sobre diseño de footer -->
+                        <p class="body-regular-2">Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor, augue nec tincidunt molestie, massa nunc varius arcu, at scelerisque elit erat a magna. Donec quis erat at libero ultrices mollis. In hac habitasse platea dictumst. Vivamus vehicula leo dui, at porta nisi facilisis finibus. In euismod augue vitae nisi ultricies, non aliquet urna tincidunt. Integer in nisi eget nulla commodo faucibus efficitur quis massa. Praesent felis est, finibus et nisi ac, hendrerit venenatis libero. Donec consectetur faucibus ipsum id gravida.</p>
+                        <!-- Texto Lorem Ipsum extenso -->
                     </div>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="#" class="btn btn-primary">Learn More</a> <!-- Botón CTA -->
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="testimonial" class="testimonial-section">
+    <!-- ============================================
+         TESTIMONIAL SECTION - Sección de testimonios
+         ============================================ -->
+    <section id="testimonial" class="testimonial-section"> <!-- Sección de testimonio de cliente con fondo gris claro -->
         <div class="container">
-            <div class="testimonial-content">
+            <div class="testimonial-content"> <!-- Layout flexbox: imagen a la izquierda, texto a la derecha -->
+
+                <!-- Contenedor de imagen/ícono del testimonio -->
                 <div class="testimonial-icon">
-                    <div class="testimonial-icon-wrapper">
-                        <img src="assets/feature/feature.svg" alt="testimonial-icon">
+                    <div class="testimonial-icon-wrapper"> <!-- Wrapper para centrar la imagen -->
+                        <img src="assets/feature/feature.svg" alt="testimonial-icon"> <!-- Imagen representativa del testimonio -->
                     </div>
                 </div>
+
+                <!-- Contenido de texto del testimonio -->
                 <div class="testimonial-text-content">
-                    <p class="body-regular-2">Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis
-                        sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero
-                        ornare, tristique quam in, gravida enim. Nullam ut molestie arcu, at hendrerit elit. Morbi
-                        laoreet elit at ligula molestie, nec molestie mi blandit. Suspendisse cursus risus at mi
-                        convallis, non convallis augue. Suspendisse malesuada eros risus, nec venenatis quam
-                        malesuada et. Morbi viverra, orci sed pulvinar tempus, eros nibh aliquam dui, in bibendum
-                        tortor nibh sit amet orci. Ut sagittis, nisi in sollicitudin bibendum, turpis lectus rhoncus
-                        mi, ut consectetur risus orci eget neque. Etiam ultricies, nisl vitae mattis tristique, est
-                        magna porttitor magna, ac porttitor velit diam nec magna. Ut fringilla, quam vitae mattis
-                        tristique, est magna porttitor magna, ac porttitor velit diam nec magna.</p>
+                    <p class="body-regular-2">Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in, gravida enim. Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie, nec molestie mi blandit. Suspendisse cursus risus at mi convallis, non convallis augue. Suspendisse malesuada eros risus, nec venenatis quam malesuada et. Morbi viverra, orci sed pulvinar tempus, eros nibh aliquam dui, in bibendum tortor nibh sit amet orci. Ut sagittis, nisi in sollicitudin bibendum, turpis lectus rhoncus mi, ut consectetur risus orci eget neque. Etiam ultricies, nisl vitae mattis tristique, est magna porttitor magna, ac porttitor velit diam nec magna. Ut fringilla, quam vitae mattis tristique, est magna porttitor magna, ac porttitor velit diam nec magna.</p>
+                    <!-- Cita del testimonio (Lorem Ipsum) -->
+
+                    <!-- Información del autor -->
                     <div class="testimonial-author">
-                        <h3 class="headline-4 testimonial-name">Tim Smith</h3>
-                        <p class="body-regular-2 testimonial-company">British Dragon Boat Racing Association</p>
+                        <h3 class="headline-4 testimonial-name">Tim Smith</h3> <!-- Nombre del autor con dos clases aplicadas -->
+                        <p class="body-regular-2 testimonial-company">British Dragon Boat Racing Association</p> <!-- Empresa/organización -->
                     </div>
-                    <div class="testimonial-clients">
-                        <div class="testimonial-clients-logos">
+
+                    <!-- Logos de clientes y enlace -->
+                    <div class="testimonial-clients"> <!-- Contenedor flexbox con flex-wrap -->
+                        <div class="testimonial-clients-logos"> <!-- Grid de logos -->
+                            <!-- Logos individuales de clientes (reutilizados de la sección anterior) -->
                             <div class="client-logo">
                                 <img src="assets/client/client1.svg" alt="client-1">
                             </div>
@@ -288,38 +354,49 @@
                                 <img src="assets/client/client6.svg" alt="client-6">
                             </div>
                         </div>
-                        <a href="#" class="testimonial-link">Meet all customers <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#" class="testimonial-link">Meet all customers <i class="fa-solid fa-arrow-right"></i></a>
+                        <!-- Enlace con ícono de flecha que se desplaza al hacer hover -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="faq-section">
+    <!-- ============================================
+         FAQ SECTION - Sección de blog/artículos
+         ============================================ -->
+    <section id="faq" class="faq-section"> <!-- Sección FAQ (aunque el contenido es más sobre blog/marketing) -->
         <div class="container">
+
+            <!-- Contenido de texto de la sección -->
             <div class="faq-content">
-                <h2 class="headline-2">Caring is the new marketing</h2>
-                <p class="body-regular-2">The Nexcent blog is the best place to read about the latest membership
-                    insights, trends and more. See who's joining the community, read about how our community are
-                    increasing their membership income and lot's more.​</p>
+                <h2 class="headline-2">Caring is the new marketing</h2> <!-- Título de la sección -->
+                <p class="body-regular-2">The Nexcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.​</p>
+                <!-- Descripción del blog -->
             </div>
-            <div class="faq-items">
-                <div class="faq-item">
-                    <img src="assets/marketing/safeguarding.svg" alt="faq-1">
-                    <div class="faq-item-content">
-                        <h4 class="headline-4">Creating Streamlined Safeguarding Processes with OneRen</h4>
-                        <a href="#" class="faq-item-link">Readmore <i class="fa-solid fa-arrow-right"></i></a>
+
+            <!-- Grid de artículos del blog -->
+            <div class="faq-items"> <!-- Grid de 3 columnas -->
+
+                <!-- Artículo 1 -->
+                <div class="faq-item"> <!-- Tarjeta de artículo con imagen y contenido superpuesto -->
+                    <img src="assets/marketing/safeguarding.svg" alt="faq-1"> <!-- Imagen del artículo -->
+                    <div class="faq-item-content"> <!-- Tarjeta de contenido con margin-top negativo (se superpone a la imagen) -->
+                        <h4 class="headline-4">Creating Streamlined Safeguarding Processes with OneRen</h4> <!-- Título del artículo -->
+                        <a href="#" class="faq-item-link">Readmore <i class="fa-solid fa-arrow-right"></i></a> <!-- Enlace "Leer más" con flecha -->
                     </div>
                 </div>
+
+                <!-- Artículo 2 -->
                 <div class="faq-item">
                     <img src="assets/marketing/revamping.svg" alt="faq-2">
                     <div class="faq-item-content">
-                        <h4 class="headline-4">What are your safeguarding responsibilities and how can you manage
-                            them?</h4>
+                        <h4 class="headline-4">What are your safeguarding responsibilities and how can you manage them?</h4>
                         <a href="#" class="faq-item-link">Readmore <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
+
+                <!-- Artículo 3 -->
                 <div class="faq-item">
                     <img src="assets/marketing/creating.svg" alt="faq-3">
                     <div class="faq-item-content">
@@ -331,61 +408,82 @@
         </div>
     </section>
 
-    <section class="cta-section">
+    <!-- ============================================
+         CTA SECTION - Llamado a la acción final
+         ============================================ -->
+    <section class="cta-section"> <!-- Sección de llamado a la acción con fondo gris claro -->
         <div class="container">
-            <div class="cta-content">
-                <h2 class="headline-2">Pellentesque suscipit fringilla libero eu.</h2>
+            <div class="cta-content"> <!-- Contenido centrado -->
+                <h2 class="headline-2">Pellentesque suscipit fringilla libero eu.</h2> <!-- Título grande (Lorem Ipsum) -->
                 <a href="#" class="btn btn-primary cta-btn">Get a Demo <i class="fa-solid fa-arrow-right"></i></a>
+                <!-- Botón principal con ícono de flecha que se desplaza al hacer hover -->
             </div>
         </div>
     </section>
-    <!-- End CTA Section -->
+    <!-- End CTA Section --> <!-- Comentario de cierre (innecesario pero común para organizar código) -->
 
-</main>
+</main> <!-- Fin del contenido principal -->
 
-<footer class="footer">
+<!-- ============================================
+     FOOTER - Pie de página
+     ============================================ -->
+<footer class="footer"> <!-- Elemento semántico de pie de página con fondo negro -->
     <div class="container">
-        <div class="footer-content">
+        <div class="footer-content"> <!-- Layout flexbox: contenido izquierdo y derecho -->
+
+            <!-- Contenido de la izquierda: Logo, copyright y redes sociales -->
             <div class="footer-content-left">
-                <a href="#">
-                    <img src="assets/logo/logo-footer.svg" alt="logo">
+                <a href="#"> <!-- Enlace al logo (vuelve al inicio) -->
+                    <img src="assets/logo/logo-footer.svg" alt="logo"> <!-- Logo alternativo para footer (probablemente blanco) -->
                 </a>
-                <p class="body-regular-3">Copyright © 2025. All rights reserved.</p>
+                <p class="body-regular-3">Copyright © 2025. All rights reserved.</p> <!-- Aviso de copyright (nota: año es 2025) -->
+
+                <!-- Íconos de redes sociales -->
                 <div class="footer-content-left-social">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-dribbble"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a> <!-- Enlace a Instagram | fa-brands: íconos de marcas -->
+                    <a href="#"><i class="fa-brands fa-dribbble"></i></a> <!-- Enlace a Dribbble -->
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a> <!-- Enlace a Twitter/X -->
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a> <!-- Enlace a YouTube -->
                 </div>
             </div>
-            <div class="footer-content-right">
+
+            <!-- Contenido de la derecha: Menús y newsletter -->
+            <div class="footer-content-right"> <!-- Contenedor flexbox con 3 columnas -->
+
+                <!-- Columna 1: Company -->
                 <div class="footer-content-right-item">
-                    <h4 class="headline-4">Company</h4>
-                    <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Testimonials</a></li>
+                    <h4 class="headline-4">Company</h4> <!-- Título de la columna -->
+                    <ul> <!-- Lista de enlaces -->
+                        <li><a href="#">About us</a></li> <!-- Enlace a página "Sobre nosotros" -->
+                        <li><a href="#">Blog</a></li> <!-- Enlace al blog -->
+                        <li><a href="#">Contact us</a></li> <!-- Enlace a contacto -->
+                        <li><a href="#">Pricing</a></li> <!-- Enlace a precios -->
+                        <li><a href="#">Testimonials</a></li> <!-- Enlace a testimonios -->
                     </ul>
                 </div>
+
+                <!-- Columna 2: Support -->
                 <div class="footer-content-right-item">
-                    <h4 class="headline-4">Support</h4>
+                    <h4 class="headline-4">Support</h4> <!-- Título de la columna -->
                     <ul>
-                        <li><a href="#">Help center</a></li>
-                        <li><a href="#">Terms of service</a></li>
-                        <li><a href="#">Legal</a></li>
-                        <li><a href="#">Privacy policy</a></li>
-                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Help center</a></li> <!-- Enlace al centro de ayuda -->
+                        <li><a href="#">Terms of service</a></li> <!-- Enlace a términos de servicio -->
+                        <li><a href="#">Legal</a></li> <!-- Enlace a información legal -->
+                        <li><a href="#">Privacy policy</a></li> <!-- Enlace a política de privacidad -->
+                        <li><a href="#">Status</a></li> <!-- Enlace a estado del sistema -->
                     </ul>
                 </div>
+
+                <!-- Columna 3: Newsletter -->
                 <div class="footer-content-right-item">
-                    <h4 class="headline-4">Stay up to date</h4>
-                    <div class="footer-content-right-item-input">
-                        <label>
+                    <h4 class="headline-4">Stay up to date</h4> <!-- Título de la columna -->
+                    <div class="footer-content-right-item-input"> <!-- Contenedor del input de email con fondo gris -->
+                        <label> <!-- Etiqueta para accesibilidad (debería tener texto visible o for="id-input") -->
                             <input type="email" placeholder="Your email address">
+                            <!-- Input de tipo email: valida formato de correo automáticamente
+                                 placeholder: texto de ejemplo que desaparece al escribir -->
                         </label>
-                        <i class="fa-regular fa-paper-plane"></i>
+                        <i class="fa-regular fa-paper-plane"></i> <!-- Ícono de avión de papel (enviar) | fa-regular: estilo outline -->
                     </div>
                 </div>
             </div>
@@ -393,5 +491,5 @@
     </div>
 </footer>
 
-</body>
-</html>
+</body> <!-- Fin del cuerpo del documento -->
+</html> <!-- Fin del documento HTML -->

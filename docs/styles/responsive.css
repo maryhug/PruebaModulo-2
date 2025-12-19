@@ -1,686 +1,915 @@
-@media (max-width: 992px) {
+/* ============================================
+   RESPONSIVE DESIGN - Media Queries
+   Breakpoints: 992px (tablet), 768px (tablet pequeño), 576px (móvil)
+   ============================================ */
+
+/* ============================================
+   TABLET Y MENORES (max-width: 992px) - HEADER RESPONSIVE
+   ============================================ */
+@media (max-width: 992px) { /* Media query: aplica estilos solo cuando el ancho de la ventana es 992px o menos */
+
+    /* Muestra el botón hamburguesa en tablets y móviles */
     .menu-toggle {
-        display: block;
+        display: block; /* Cambia de 'none' (oculto en desktop) a 'block' (visible) */
     }
 
+    /* Menú lateral deslizante */
     .header-menu {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 300px;
-        height: calc(100vh - 80px);
-        background-color: var(--white-color);
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        transition: left 0.3s ease;
-        overflow-y: auto;
+        position: fixed; /* Posición fija: permanece en el mismo lugar al hacer scroll */
+        top: 80px; /* Se posiciona 80px desde arriba (debajo del header) */
+        left: -100%; /* Inicialmente fuera de la pantalla a la izquierda (oculto) */
+        width: 300px; /* Ancho del menú lateral: 300px */
+        height: calc(100vh - 80px); /* Altura: 100% de la ventana menos 80px del header (vh = viewport height) */
+        background-color: var(--white-color); /* Fondo blanco */
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Sombra lateral derecha: (x, y, blur, color) */
+        transition: left 0.3s ease; /* Transición suave al deslizar (anima la propiedad 'left') */
+        overflow-y: auto; /* Permite scroll vertical si el contenido es muy largo */
     }
 
+    /* Lista del menú en vertical */
     .header-menu ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 30px 0;
+        flex-direction: column; /* Cambia de horizontal a vertical */
+        align-items: flex-start; /* Alinea elementos al inicio (izquierda) en lugar de centrarlos */
+        gap: 0; /* Elimina el espacio entre elementos (ahora se usa padding y border) */
+        padding: 30px 0; /* Espaciado: 30px arriba y abajo, 0 a los lados */
     }
 
+    /* Items individuales del menú ocupan todo el ancho */
     .header-menu li {
-        width: 100%;
-        border-bottom: 1px solid #f0f0f0;
+        width: 100%; /* Cada item ocupa el ancho completo del menú */
+        border-bottom: 1px solid #f0f0f0; /* Línea separadora gris muy clara en la parte inferior */
     }
 
+    /* Enlaces del menú con área clickeable más grande */
     .header-menu li a {
-        display: block;
-        padding: 16px 30px;
-        width: 100%;
+        display: block; /* Cambia de inline a block para ocupar todo el ancho */
+        padding: 16px 30px; /* Espaciado interno: 16px arriba/abajo, 30px izq/der (área clickeable grande) */
+        width: 100%; /* Ocupa el 100% del ancho del li */
     }
 
+    /* Oculta la línea animada bajo los enlaces (no tiene sentido en menú vertical) */
     .header-menu li a::after {
-        display: none;
+        display: none; /* Oculta completamente el pseudo-elemento decorativo */
     }
 
+    /* Botones de acción en la parte inferior del menú lateral */
     .header-actions {
-        position: fixed;
-        bottom: 20px;
-        left: -100%;
-        width: 300px;
-        flex-direction: column;
-        gap: 12px;
-        padding: 20px 30px;
-        background-color: var(--white-color);
-        transition: left 0.3s ease;
+        position: fixed; /* Posición fija: se mantiene en el mismo lugar */
+        bottom: 20px; /* 20px desde el borde inferior de la ventana */
+        left: -100%; /* Inicialmente fuera de la pantalla (oculto) */
+        width: 300px; /* Mismo ancho que el menú: 300px */
+        flex-direction: column; /* Apila los botones verticalmente en lugar de horizontalmente */
+        gap: 12px; /* Espacio de 12px entre botones */
+        padding: 20px 30px; /* Espaciado interno: 20px arriba/abajo, 30px izq/der */
+        background-color: var(--white-color); /* Fondo blanco */
+        transition: left 0.3s ease; /* Transición suave al deslizar */
     }
 
+    /* Botones ocupan todo el ancho disponible */
     .header-actions .btn {
-        width: 100%;
+        width: 100%; /* Cada botón ocupa el 100% del ancho del contenedor */
     }
 
-    #menu-checkbox:checked~.header-menu {
-        left: 0;
+    /* Selector de hermanos: cuando el checkbox está marcado, muestra el menú */
+    #menu-checkbox:checked~.header-menu { /* ~: selector de hermanos (siblings) - selecciona .header-menu cuando el checkbox está checked */
+        left: 0; /* Mueve el menú a la posición visible (left: 0 en lugar de left: -100%) */
     }
 
+    /* Cuando el checkbox está marcado, muestra los botones de acción */
     #menu-checkbox:checked~.header-actions {
-        left: 0;
+        left: 0; /* Mueve los botones a la posición visible */
     }
 }
 
-@media (max-width: 576px) {
+/* ============================================
+   MÓVIL (max-width: 576px) - HEADER MÁS PEQUEÑO
+   ============================================ */
+@media (max-width: 576px) { /* Aplica solo en pantallas de 576px o menos (smartphones) */
+
+    /* Menú lateral más estrecho en móviles pequeños */
     .header-menu {
-        width: 280px;
+        width: 280px; /* Reduce el ancho de 300px a 280px */
     }
 
+    /* Botones de acción más estrechos */
     .header-actions {
-        width: 280px;
+        width: 280px; /* Mismo ancho que el menú */
     }
 
+    /* Logo más pequeño en móviles */
     .header a img {
-        height: 24px;
+        height: 24px; /* Reduce la altura de 28px a 24px */
     }
 }
 
+/* ============================================
+   TABLET Y MENORES (max-width: 992px) - HERO RESPONSIVE
+   ============================================ */
 @media (max-width: 992px) {
+
+    /* Reduce el espacio superior del body */
     body {
-        padding-top: 75px;
+        padding-top: 75px; /* Reduce de 80px a 75px (compensa el header más pequeño) */
     }
 
+    /* Hero adapta su altura y padding */
     .hero {
-        padding: 80px 16px;
-        height: auto;
+        padding: 80px 16px; /* Reduce el padding lateral de 96px a 16px */
+        height: auto; /* Altura automática en lugar de calc(80vh - 80px) para adaptarse al contenido */
     }
 
+    /* Contenedor del hero se vuelve vertical (columna) */
     .hero .container {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 32px;
-        padding: 0;
+        flex-direction: column; /* Cambia de horizontal a vertical (texto arriba, imagen abajo) */
+        align-items: center; /* Centra horizontalmente los elementos */
+        justify-content: center; /* Centra verticalmente */
+        gap: 32px; /* Reduce el espacio de 104px a 32px */
+        padding: 0; /* Elimina padding del contenedor */
     }
 
+    /* Contenido del hero centrado */
     .hero-content {
-        max-width: 640px;
-        text-align: center;
-        align-items: center;
-        gap: 20px;
+        max-width: 640px; /* Ancho máximo ligeramente reducido */
+        text-align: center; /* Centra el texto */
+        align-items: center; /* Centra los elementos hijo (botón) */
+        gap: 20px; /* Reduce el espacio entre elementos de 32px a 20px */
     }
 
+    /* Título más pequeño en tablets */
     .hero .headline-1 {
-        font-size: 40px;
-        line-height: 1.2;
+        font-size: 40px; /* Reduce de 64px a 40px */
+        line-height: 1.2; /* Line-height relativo: 1.2 veces el tamaño de fuente (48px) */
     }
 
+    /* Texto del body más pequeño */
     .body-regular-1 {
-        font-size: 16px;
-        line-height: 26px;
+        font-size: 16px; /* Reduce de 18px a 16px */
+        line-height: 26px; /* Reduce de 28px a 26px */
     }
 
+    /* Botón del hero con ancho controlado */
     .hero-content .btn {
-        width: 100%;
-        max-width: 240px;
+        width: 100%; /* Ocupa el 100% del contenedor padre */
+        max-width: 240px; /* Pero no más de 240px (evita que sea demasiado ancho) */
     }
 
+    /* Imagen del hero responsive */
     .hero-image img {
-        width: 100%;
-        height: auto;
+        width: 100%; /* Ocupa el 100% del contenedor */
+        height: auto; /* Altura automática: mantiene las proporciones de la imagen */
     }
 
+    /* Oculta los puntos indicadores en tablets y móviles */
     .dots-container{
-        display: none;
+        display: none; /* Los puntos no se muestran (no tienen sentido sin slider) */
     }
 
+    /* Iconos de redes sociales centrados */
     .footer-content-left-social {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        text-align: center;
+        display: flex; /* Mantiene flexbox */
+        gap: 16px; /* Mantiene el espacio de 16px */
+        align-items: center; /* Centra verticalmente */
+        text-align: center; /* Centra el contenido */
     }
 }
 
+/* ============================================
+   MÓVIL (max-width: 576px) - HERO MÁS COMPACTO
+   ============================================ */
 @media (max-width: 576px) {
+
+    /* Hero más compacto en móviles */
     .hero {
-        padding: 64px 12px;
+        padding: 64px 12px; /* Reduce padding: 64px arriba/abajo, 12px izq/der */
     }
 
+    /* Título aún más pequeño */
     .hero .headline-1 {
-        font-size: 32px;
+        font-size: 32px; /* Reduce de 40px a 32px */
     }
 }
 
+/* ============================================
+   TABLET PEQUEÑO (max-width: 768px) - SLIDER DE CLIENTES
+   ============================================ */
 @media (max-width: 768px) {
+
+    /* Mantiene el tamaño de los items del slider */
     .our-clients-slider-item {
-        flex: 0 0 150px;
+        flex: 0 0 150px; /* No crece, no se encoge, tamaño base 150px */
     }
 
+    /* Mantiene el tamaño de los logos */
     .our-clients-slider-item img {
-        width: 70px;
+        width: 70px; /* Ancho fijo de 70px */
     }
 }
 
+/* ============================================
+   TABLET (max-width: 992px) - FEATURES GRID RESPONSIVE
+   ============================================ */
 @media (max-width: 992px) {
+
+    /* Grid de características pasa de 3 a 2 columnas */
     .features-cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño en lugar de 3 */
     }
 }
 
+/* ============================================
+   TABLET PEQUEÑO (max-width: 768px) - FEATURES UNA COLUMNA
+   ============================================ */
 @media (max-width: 768px) {
+
+    /* Grid de características pasa a 1 columna */
     .features-cards {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr); /* 1 columna: las tarjetas se apilan verticalmente */
     }
 }
 
+/* ============================================
+   TABLET (max-width: 992px) - CONTENT SECTION VERTICAL
+   ============================================ */
 @media (max-width: 992px) {
+
+    /* Sección de contenido cambia a layout vertical */
     .content-section-1-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 32px;
+        flex-direction: column; /* Apila imagen y texto verticalmente */
+        align-items: center; /* Centra los elementos */
+        text-align: center; /* Centra el texto */
+        gap: 32px; /* Reduce el espacio de 48px a 32px */
     }
 
+    /* Contenedor de texto centrado */
     .content-section-1-content-text {
-        align-items: center;
-        text-align: center;
+        align-items: center; /* Centra elementos hijo (botón) */
+        text-align: center; /* Centra el texto */
     }
 
+    /* Contenedor interno de texto centrado */
     .content-section-1-content-text-content {
-        align-items: center;
-        text-align: center;
+        align-items: center; /* Centra elementos */
+        text-align: center; /* Centra el texto */
     }
 
+    /* Imagen responsive con reordenamiento */
     .content-section-1-content img {
-        max-width: 100%;
-        order: -1;
+        max-width: 100%; /* Ocupa máximo el 100% del contenedor */
+        order: -1; /* Orden flexbox: -1 coloca la imagen ANTES del texto (aunque en HTML esté después) */
     }
 }
 
+/* ============================================
+   TABLET PEQUEÑO (max-width: 768px) - CONTENT SECTION AJUSTES
+   ============================================ */
 @media (max-width: 768px) {
+
+    /* Padding reducido de la sección */
     .content-section-1 {
-        padding: 60px 0;
+        padding: 60px 0; /* Reduce de 80px a 60px arriba y abajo */
     }
 
+    /* Espacios más compactos */
     .content-section-1-content {
-        gap: 24px;
+        gap: 24px; /* Reduce el espacio de 32px a 24px */
     }
 
     .content-section-1-content-text {
-        gap: 24px;
+        gap: 24px; /* Reduce el espacio de 32px a 24px */
     }
 
+    /* Títulos más pequeños */
     .content-section-1-content-text-content h2 {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 28px; /* Reduce de 36px a 28px */
+        line-height: 36px; /* Reduce de 44px a 36px */
     }
 
+    /* Texto más pequeño */
     .content-section-1-content-text-content p {
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 14px; /* Reduce de 16px a 14px */
+        line-height: 22px; /* Reduce de 24px a 22px */
     }
 }
 
+/* ============================================
+   MÓVIL (max-width: 576px) - CONTENT SECTION MÁS COMPACTO
+   ============================================ */
 @media (max-width: 576px) {
+
+    /* Padding aún más reducido */
     .content-section-1 {
-        padding: 40px 0;
+        padding: 40px 0; /* Reduce de 60px a 40px */
     }
 
+    /* Espacios muy compactos */
     .content-section-1-content {
-        gap: 20px;
+        gap: 20px; /* Reduce de 24px a 20px */
     }
 
     .content-section-1-content-text {
-        gap: 20px;
+        gap: 20px; /* Reduce de 24px a 20px */
     }
 
+    /* Títulos más pequeños para móviles */
     .content-section-1-content-text-content h2 {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 24px; /* Reduce de 28px a 24px */
+        line-height: 32px; /* Reduce de 36px a 32px */
     }
 
+    /* Botón ocupa casi todo el ancho en móviles */
     .content-section-1-content-text .btn {
-        width: 100%;
-        max-width: 280px;
+        width: 100%; /* Ancho completo */
+        max-width: 280px; /* Pero no más de 280px */
     }
 }
 
+/* ============================================
+   TABLET (max-width: 992px) - STATS SECTION VERTICAL
+   ============================================ */
 @media (max-width: 992px) {
+
+    /* Padding reducido */
     .stats-section {
-        padding: 60px 0;
+        padding: 60px 0; /* Reduce de 80px a 60px */
     }
 
+    /* Layout vertical: texto arriba, estadísticas abajo */
     .stats-section-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 40px;
+        flex-direction: column; /* Cambia de horizontal a vertical */
+        align-items: center; /* Centra los elementos */
+        text-align: center; /* Centra el texto */
+        gap: 40px; /* Aumenta el espacio de 16px a 40px (más aire entre secciones verticales) */
     }
 
+    /* Contenedor de texto centrado */
     .stats-section-content .content-item {
-        align-items: center;
-        text-align: center;
+        align-items: center; /* Centra elementos hijo */
+        text-align: center; /* Centra el texto */
     }
 
+    /* Título sin restricción de ancho */
     .stats-section-content .content-item h2 {
-        max-width: 100%;
+        max-width: 100%; /* Elimina la restricción de 380px */
     }
 
+    /* Grid de estadísticas pasa de 2x2 a 2 columnas */
     .stats-items {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-        width: 100%;
+        grid-template-columns: repeat(2, 1fr); /* Mantiene 2 columnas */
+        gap: 24px; /* Reduce el espacio de 40px a 24px */
+        width: 100%; /* Ocupa el ancho completo */
     }
 
+    /* Items de estadísticas centrados */
     .stats-item {
-        justify-content: center;
+        justify-content: center; /* Centra el contenido horizontalmente */
     }
 }
 
+/* ============================================
+   TABLET PEQUEÑO (max-width: 768px) - STATS UNA COLUMNA
+   ============================================ */
 @media (max-width: 768px) {
+
+    /* Padding reducido */
     .stats-section {
-        padding: 50px 0;
+        padding: 50px 0; /* Reduce de 60px a 50px */
     }
 
+    /* Espacios reducidos */
     .stats-section-content {
-        gap: 32px;
+        gap: 32px; /* Reduce de 40px a 32px */
     }
 
+    /* Títulos más pequeños */
     .stats-section-content .content-item h2 {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 28px; /* Reduce de 36px a 28px */
+        line-height: 36px; /* Reduce de 44px a 36px */
     }
 
+    /* Grid de estadísticas pasa a 1 columna */
     .stats-items {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(1, 1fr); /* Una sola columna: todas las estadísticas apiladas */
+        gap: 20px; /* Reduce el espacio de 24px a 20px */
     }
 
+    /* Items con más padding */
     .stats-item {
-        justify-content: center;
-        padding: 16px;
+        justify-content: center; /* Mantiene centrado */
+        padding: 16px; /* Aumenta padding de 10px a 16px */
     }
 }
 
+/* ============================================
+   MÓVIL (max-width: 576px) - STATS MÁS COMPACTO
+   ============================================ */
 @media (max-width: 576px) {
+
+    /* Padding muy reducido */
     .stats-section {
-        padding: 40px 0;
+        padding: 40px 0; /* Reduce de 50px a 40px */
     }
 
+    /* Espacios compactos */
     .stats-section-content {
-        gap: 24px;
+        gap: 24px; /* Reduce de 32px a 24px */
     }
 
+    /* Títulos pequeños */
     .stats-section-content .content-item h2 {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 24px; /* Reduce de 28px a 24px */
+        line-height: 32px; /* Reduce de 36px a 32px */
     }
 
+    /* Texto pequeño */
     .stats-section-content .content-item p {
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 14px; /* Reduce de 16px a 14px */
+        line-height: 22px; /* Reduce de 24px a 22px */
     }
 
+    /* Espacios entre items reducidos */
     .stats-items {
-        gap: 16px;
+        gap: 16px; /* Reduce de 20px a 16px */
     }
 
+    /* Items completamente verticales (ícono arriba, texto abajo) */
     .stats-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-        padding: 20px;
+        flex-direction: column; /* Cambia de horizontal a vertical */
+        text-align: center; /* Centra el texto */
+        gap: 12px; /* Espacio entre ícono y texto */
+        padding: 20px; /* Aumenta padding para mejor visualización */
     }
 
+    /* Números de estadísticas más pequeños */
     .stats-item-content h2 {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 28px; /* Reduce de 36px a 28px */
+        line-height: 36px; /* Reduce de 44px a 36px */
     }
 
+    /* Etiquetas de estadísticas más pequeñas */
     .stats-item-content p {
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 14px; /* Reduce de 16px a 14px */
+        line-height: 22px; /* Reduce de 24px a 22px */
     }
 
+    /* Track del slider en columna (para sección de clientes) */
     .slider-track {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        display: flex; /* Mantiene flexbox */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        flex-direction: column; /* Cambia a columna vertical */
     }
 
+    /* Oculta puntos indicadores (duplicado de línea anterior) */
     .dots-container{
-        display: none;
+        display: none; /* Ya está oculto en 992px, pero se repite aquí */
     }
-
 }
 
+/* ============================================
+   TABLET (max-width: 992px) - TESTIMONIAL VERTICAL
+   ============================================ */
 @media (max-width: 992px) {
+
+    /* Padding reducido */
     .testimonial-section {
-        padding: 60px 0;
+        padding: 60px 0; /* Reduce de 80px a 60px */
     }
 
+    /* Layout vertical: imagen arriba, texto abajo */
     .testimonial-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 40px;
+        flex-direction: column; /* Cambia de horizontal a vertical */
+        align-items: center; /* Centra elementos */
+        text-align: center; /* Centra el texto */
+        gap: 40px; /* Reduce de 80px a 40px */
     }
 
+    /* Imagen del testimonio más pequeña */
     .testimonial-icon-wrapper {
-        width: 160px;
-        height: 160px;
+        width: 160px; /* Reduce el tamaño */
+        height: 160px; /* Mantiene proporción 1:1 */
     }
 
+    /* Letra inicial más pequeña */
     .testimonial-icon-letter {
-        font-size: 90px;
+        font-size: 90px; /* Reduce de 120px a 90px */
     }
 
+    /* Contenido de texto centrado */
     .testimonial-text-content {
-        align-items: center;
-        text-align: center;
+        align-items: center; /* Centra elementos hijo */
+        text-align: center; /* Centra el texto */
     }
 
+    /* Logos de clientes apilados verticalmente */
     .testimonial-clients {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
+        flex-direction: column; /* Cambia a vertical */
+        align-items: center; /* Centra elementos */
+        gap: 24px; /* Mantiene el espacio de 24px */
     }
 
+    /* Grid de logos centrado */
     .testimonial-clients-logos {
-        justify-content: center;
-        gap: 24px;
+        justify-content: center; /* Centra los logos */
+        gap: 24px; /* Reduce de 32px a 24px */
     }
 }
 
+/* ============================================
+   TABLET PEQUEÑO (max-width: 768px) - TESTIMONIAL AJUSTES
+   ============================================ */
 @media (max-width: 768px) {
+
+    /* Padding reducido */
     .testimonial-section {
-        padding: 50px 0;
+        padding: 50px 0; /* Reduce de 60px a 50px */
     }
 
+    /* Espacios reducidos */
     .testimonial-content {
-        gap: 32px;
+        gap: 32px; /* Reduce de 40px a 32px */
     }
 
+    /* Imagen aún más pequeña */
     .testimonial-icon-wrapper {
-        width: 140px;
+        width: 140px; /* Reduce de 160px a 140px */
         height: 140px;
     }
 
+    /* Letra inicial más pequeña */
     .testimonial-icon-letter {
-        font-size: 75px;
+        font-size: 75px; /* Reduce de 90px a 75px */
     }
 
+    /* Espacios del texto reducidos */
     .testimonial-text-content {
-        gap: 24px;
+        gap: 24px; /* Reduce de 32px a 24px */
     }
 
+    /* Texto del testimonio más pequeño */
     .testimonial-text-content>p {
-        font-size: 14px;
-        line-height: 24px;
+        font-size: 14px; /* Reduce de 16px a 14px */
+        line-height: 24px; /* Reduce de 28px a 24px */
     }
 
+    /* Logos más cercanos */
     .testimonial-clients-logos {
-        gap: 20px;
+        gap: 20px; /* Reduce de 24px a 20px */
     }
 
+    /* Logos más pequeños */
     .client-logo img {
-        height: 35px;
+        height: 35px; /* Reduce de 40px a 35px */
     }
 }
 
+/* ============================================
+   MÓVIL (max-width: 576px) - TESTIMONIAL COMPACTO
+   ============================================ */
 @media (max-width: 576px) {
+
+    /* Padding muy reducido */
     .testimonial-section {
-        padding: 40px 0;
+        padding: 40px 0; /* Reduce de 50px a 40px */
     }
 
+    /* Espacios muy compactos */
     .testimonial-content {
-        gap: 24px;
+        gap: 24px; /* Reduce de 32px a 24px */
     }
 
+    /* Imagen pequeña para móviles */
     .testimonial-icon-wrapper {
-        width: 120px;
+        width: 120px; /* Reduce de 140px a 120px */
         height: 120px;
     }
 
+    /* Letra inicial pequeña */
     .testimonial-icon-letter {
-        font-size: 60px;
+        font-size: 60px; /* Reduce de 75px a 60px */
     }
 
+    /* Espacios compactos */
     .testimonial-text-content {
-        gap: 20px;
+        gap: 20px; /* Reduce de 24px a 20px */
     }
 
+    /* Nombre del autor más pequeño */
     .testimonial-name {
-        font-size: 18px;
+        font-size: 18px; /* Reduce de 20px a 18px */
     }
 
+    /* Empresa más pequeña */
     .testimonial-company {
-        font-size: 14px;
+        font-size: 14px; /* Reduce de 16px a 14px */
     }
 
+    /* Logos muy cercanos */
     .testimonial-clients-logos {
-        gap: 16px;
+        gap: 16px; /* Reduce de 20px a 16px */
     }
 
+    /* Logos muy pequeños */
     .client-logo img {
-        height: 30px;
+        height: 30px; /* Reduce de 35px a 30px */
     }
 
+    /* Enlace más pequeño */
     .testimonial-link {
-        font-size: 14px;
+        font-size: 14px; /* Reduce de 16px a 14px */
     }
 }
 
+/* ============================================
+   TABLET (max-width: 992px) - FAQ DOS COLUMNAS
+   ============================================ */
 @media (max-width: 992px) {
+
+    /* Padding reducido */
     .faq-section {
-        padding: 60px 0;
+        padding: 60px 0; /* Reduce de 80px a 60px */
     }
 
+    /* Espacio reducido antes de los items */
     .faq-content {
-        margin-bottom: 40px;
+        margin-bottom: 40px; /* Reduce de 16px a 40px (aumenta espacio en tablet) */
     }
 
+    /* Grid pasa de 3 a 2 columnas */
     .faq-items {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en lugar de 3 */
+        gap: 32px; /* Aumenta de 24px a 32px (más espacio en tablet) */
     }
 
+    /* Tarjetas de contenido responsivas */
     .faq-item-content {
-        width: 100%;
-        max-width: 100%;
-        margin-top: -80px;
+        width: 100%; /* Ocupa el 100% del contenedor */
+        max-width: 100%; /* Sin restricción de ancho máximo */
+        margin-top: -80px; /* Reduce la superposición de -100px a -80px */
     }
 }
 
+/* ============================================
+   TABLET PEQUEÑO (max-width: 768px) - FAQ UNA COLUMNA
+   ============================================ */
 @media (max-width: 768px) {
+
+    /* Padding reducido */
     .faq-section {
-        padding: 50px 0;
+        padding: 50px 0; /* Reduce de 60px a 50px */
     }
 
+    /* Espacio reducido */
     .faq-content {
-        margin-bottom: 32px;
+        margin-bottom: 32px; /* Reduce de 40px a 32px */
     }
 
+    /* Título más pequeño */
     .faq-content h2 {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 28px; /* Reduce de 36px a 28px */
+        line-height: 36px; /* Reduce de 44px a 36px */
     }
 
+    /* Texto más pequeño */
     .faq-content p {
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 14px; /* Reduce de 16px a 14px */
+        line-height: 22px; /* Reduce de 24px a 22px */
     }
 
+    /* Grid pasa a 1 columna */
     .faq-items {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 40px;
+        grid-template-columns: repeat(1, 1fr); /* Una sola columna */
+        gap: 40px; /* Aumenta de 32px a 40px (más aire entre items apilados) */
     }
 
+    /* Espacios reducidos en items */
     .faq-item {
-        gap: 20px;
+        gap: 20px; /* Reduce de 16px a 20px */
     }
 
+    /* Tarjetas con altura automática */
     .faq-item-content {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        min-height: 175px;
-        margin-top: -60px;
-        padding: 20px;
+        width: 100%; /* Ancho completo */
+        max-width: 100%; /* Sin restricción */
+        height: auto; /* Altura automática en lugar de 175px fijos */
+        min-height: 175px; /* Pero al menos 175px de altura */
+        margin-top: -60px; /* Reduce superposición de -80px a -60px */
+        padding: 20px; /* Aumenta padding de 16px a 20px */
     }
 
+    /* Títulos de tarjetas más pequeños */
     .faq-item-content h4 {
-        font-size: 18px;
-        line-height: 26px;
+        font-size: 18px; /* Reduce de 20px a 18px */
+        line-height: 26px; /* Reduce de 28px a 26px */
     }
 }
 
+/* ============================================
+   MÓVIL (max-width: 576px) - FAQ MÁS COMPACTO
+   ============================================ */
 @media (max-width: 576px) {
+
+    /* Padding muy reducido */
     .faq-section {
-        padding: 40px 0;
+        padding: 40px 0; /* Reduce de 50px a 40px */
     }
 
+    /* Espacio compacto */
     .faq-content {
-        margin-bottom: 24px;
+        margin-bottom: 24px; /* Reduce de 32px a 24px */
     }
 
+    /* Título pequeño */
     .faq-content h2 {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 24px; /* Reduce de 28px a 24px */
+        line-height: 32px; /* Reduce de 36px a 32px */
     }
 
+    /* Texto muy pequeño */
     .faq-content p {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 14px; /* Mantiene 14px */
+        line-height: 20px; /* Reduce de 22px a 20px */
     }
 
+    /* Espacios entre items reducidos */
     .faq-items {
-        gap: 32px;
+        gap: 32px; /* Reduce de 40px a 32px */
     }
 
+    /* Espacios compactos en items */
     .faq-item {
-        gap: 16px;
+        gap: 16px; /* Reduce de 20px a 16px */
     }
 
+    /* Tarjetas con menos superposición */
     .faq-item-content {
-        margin-top: -40px;
-        padding: 16px;
-        min-height: 160px;
+        margin-top: -40px; /* Reduce superposición de -60px a -40px */
+        padding: 16px; /* Reduce padding de 20px a 16px */
+        min-height: 160px; /* Altura mínima menor: 160px en lugar de 175px */
     }
 
+    /* Títulos muy pequeños */
     .faq-item-content h4 {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 16px; /* Reduce de 18px a 16px */
+        line-height: 24px; /* Reduce de 26px a 24px */
     }
 
+    /* Enlaces más pequeños */
     .faq-item-content a {
-        font-size: 14px;
+        font-size: 14px; /* Reduce de 16px (por defecto) a 14px */
     }
 }
 
-
+/* ============================================
+   TABLET PEQUEÑO (max-width: 768px) - CTA AJUSTES
+   ============================================ */
 @media (max-width: 768px) {
+
+    /* Padding reducido */
     .cta-section {
-        padding: 60px 0;
+        padding: 60px 0; /* Reduce de 80px a 60px */
     }
 
+    /* Espacios reducidos */
     .cta-content {
-        gap: 24px;
+        gap: 24px; /* Reduce de 32px a 24px */
     }
 
+    /* Título más pequeño */
     .cta-content h2 {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 28px; /* Reduce de 64px a 28px (cambio drástico para tablet) */
+        line-height: 36px; /* Reduce de 72px a 36px */
     }
 
+    /* Botón más pequeño */
     .cta-btn {
-        padding: 12px 28px;
-        font-size: 15px;
+        padding: 12px 28px; /* Reduce de 14px 32px a 12px 28px */
+        font-size: 15px; /* Reduce de 16px a 15px */
     }
 }
 
+/* ============================================
+   MÓVIL (max-width: 576px) - CTA COMPACTO
+   ============================================ */
 @media (max-width: 576px) {
+
+    /* Padding reducido */
     .cta-section {
-        padding: 50px 0;
+        padding: 50px 0; /* Reduce de 60px a 50px */
     }
 
+    /* Espacios compactos */
     .cta-content {
-        gap: 20px;
+        gap: 20px; /* Reduce de 24px a 20px */
     }
 
+    /* Título pequeño */
     .cta-content h2 {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 24px; /* Reduce de 28px a 24px */
+        line-height: 32px; /* Reduce de 36px a 32px */
     }
 
+    /* Botón ancho completo con límite */
     .cta-btn {
-        padding: 12px 24px;
-        font-size: 14px;
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
+        padding: 12px 24px; /* Reduce padding lateral de 28px a 24px */
+        font-size: 14px; /* Reduce de 15px a 14px */
+        width: 100%; /* Ancho completo */
+        max-width: 280px; /* Pero no más de 280px */
+        justify-content: center; /* Centra el contenido del botón (texto + ícono) */
     }
 }
 
+/* ============================================
+   TABLET (max-width: 992px) - FOOTER VERTICAL
+   ============================================ */
 @media (max-width: 992px) {
+
+    /* Footer se vuelve vertical */
     .footer-content {
-        flex-direction: column;
-        gap: 48px;
-        align-items: center;
+        flex-direction: column; /* Cambia de horizontal a vertical (izquierda arriba, derecha abajo) */
+        gap: 48px; /* Aumenta de 40px a 48px (más aire entre secciones) */
+        align-items: center; /* Centra todos los elementos */
     }
 
+    /* Contenido derecho con wrap (permite múltiples líneas) */
     .footer-content-right {
-        flex-wrap: wrap;
-        gap: 40px;
+        flex-wrap: wrap; /* Permite que las columnas se envuelvan si no hay espacio */
+        gap: 40px; /* Reduce de 90px a 40px */
     }
 }
 
+/* ============================================
+   TABLET PEQUEÑO (max-width: 768px) - FOOTER AJUSTES
+   ============================================ */
 @media (max-width: 768px) {
+
+    /* Padding reducido */
     .footer {
-        padding: 50px 0;
+        padding: 50px 0; /* Reduce de 80px a 50px */
     }
 
+    /* Espacios reducidos */
     .footer-content {
-        gap: 40px;
+        gap: 40px; /* Reduce de 48px a 40px */
     }
 
+    /* Columnas del footer en vertical */
     .footer-content-right {
-        flex-direction: column;
-        gap: 32px;
+        flex-direction: column; /* Todas las columnas apiladas verticalmente */
+        gap: 32px; /* Reduce de 40px a 32px */
     }
 
+    /* Input de newsletter con ancho limitado */
     .footer-content-right-item-input {
-        width: 100%;
-        max-width: 400px;
+        width: 100%; /* Ancho completo del contenedor */
+        max-width: 400px; /* Pero no más de 400px (evita que sea demasiado ancho) */
     }
 }
 
+/* ============================================
+   MÓVIL (max-width: 576px) - FOOTER COMPACTO
+   ============================================ */
 @media (max-width: 576px) {
+
+    /* Padding muy reducido */
     .footer {
-        padding: 40px 0;
+        padding: 40px 0; /* Reduce de 50px a 40px */
     }
 
+    /* Espacios compactos y todo centrado */
     .footer-content {
-        gap: 32px;
-        text-align: center;
+        gap: 32px; /* Reduce de 40px a 32px */
+        text-align: center; /* Centra todo el texto del footer */
     }
 
+    /* Espacios reducidos en contenido izquierdo */
     .footer-content-left {
-        gap: 24px;
+        gap: 24px; /* Reduce de 40px a 24px */
     }
 
+    /* Iconos sociales más cercanos */
     .footer-content-left-social {
-        gap: 12px;
+        gap: 12px; /* Reduce de 16px a 12px */
     }
 
+    /* Iconos sociales más pequeños */
     .footer-content-left-social a {
-        width: 36px;
-        height: 36px;
-        font-size: 18px;
+        width: 36px; /* Reduce de 40px a 36px */
+        height: 36px; /* Mantiene proporción 1:1 */
+        font-size: 18px; /* Reduce de 22px a 18px */
     }
 
+    /* Espacios reducidos en columnas */
     .footer-content-right {
-        gap: 24px;
+        gap: 24px; /* Reduce de 32px a 24px */
     }
 
+    /* Espacios internos de columnas reducidos */
     .footer-content-right-item {
-        gap: 16px;
+        gap: 16px; /* Reduce de 30px a 16px */
     }
 
+    /* Input ocupa todo el ancho disponible */
     .footer-content-right-item-input {
-        max-width: 100%;
+        max-width: 100%; /* Elimina la restricción de 400px */
     }
 }
